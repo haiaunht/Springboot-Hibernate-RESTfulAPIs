@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teams</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h2>Curling Teams</h2>
+<div th:each="team, index : ${allTeams}" th:remove="tag">
+  <div th:object="${team}">
+    <ul>
+      <a class="itemLink" th:href="@{/teams/} + ${team.Id}"><li th:text="*{name}" ></li></a>
+    </ul>
+  </div>
+</div>
+
+<h3><a class="link" th:href="@{/fantasy/team/new}" >Add new Team</a></h3>
+<!--<h3><a class="link" th:href="@{/positions}" >View all Positions</a></h3>-->
+</body>
+</html>

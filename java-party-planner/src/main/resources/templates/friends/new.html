@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a friend</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1> Add a friend</h1>
+    <form action="#" th:action="@{/friends}" th:object="${friend}" method="POST">
+        <label th:for="firstName">First Name:</label>
+        <input type="text" id="firstName" th:field="*{firstName}" />
+        <p class="error" th:errors="*{firstName}"></p>
+        <br/>
+
+        <label th:for="lastName">Last Name:</label>
+        <input type="text" id="lastName" th:field="*{lastName}" />
+        <p class="error" th:errors="*{lastName}"></p>
+        <br/>
+
+        <input type="submit" value="Add Friend" />
+    </form>
+
+<h3><a class="link" th:href="'/friends'">Back to friend list!</a></h3>
+</body>
+</html>

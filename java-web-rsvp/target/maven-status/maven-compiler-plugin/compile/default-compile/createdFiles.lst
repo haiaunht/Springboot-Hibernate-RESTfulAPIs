@@ -1,0 +1,7 @@
+com/launchacademy/EMFListener.class
+com/launchacademy/admin/controllers/EventController.class
+com/launchacademy/admin/models/Event.class
+com/launchacademy/admin/services/EventService.class
+com/launchacademy/rsvp/models/Participant.class
+com/launchacademy/rsvp/controllers/ParticipantsController.class
+com/launchacademy/rsvp/services/RsvpsService.class

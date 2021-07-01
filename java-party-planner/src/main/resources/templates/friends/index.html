@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Party</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <h1>List of friends</h1>
+    <div th:each="friend : ${friends}" th:object="${friend}">
+            <p th:text="*{firstName} + ' ' + *{lastName}"></p>
+    </div>
+
+<h3><a class="link" th:href="'/friends/new'">Add a friend!</a></h3>
+<h3><a class="link" th:href="'/parties'">Party's list</a></h3>
+</body>
+</html>

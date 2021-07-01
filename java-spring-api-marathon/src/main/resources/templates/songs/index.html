@@ -1,0 +1,17 @@
+<html xmlns:th="https://www.thymeleaf.org"
+th:replace="~{fragments/layout :: layout (~{::body})}">
+
+  <body>
+    <h1>Songs Index</h1>
+
+    <ul>
+      <div class="songs" th:each="song : ${songs}">
+        <div class="song" th:object="${song}">
+          <ul th:text="*{title}"></ul>
+        </div>
+      </div>
+    </ul>
+
+    <h3><a class="link" th:href="'/songs/new'">Add a Song!</a></h3>
+  </body>
+</html>

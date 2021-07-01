@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Current Team</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h2>Your are currently viewing:</h2>
+<div th:object="${current}" th:if="${current}">
+  <h2 th:text="*{name}"></h2>
+  <ol>
+    <div th:each="player : ${current.players}" th:if="${player}" th:remove="tag">
+      <li th:object="${player}">
+        <p th:text="*{name} + ' : ' + *{position}"></p>
+      </li>
+    </div>
+  </ol>
+</div>
+
+<h3><a class="link" th:href="@{/}">Back to List</a></h3>
+
+</body>
+</html>

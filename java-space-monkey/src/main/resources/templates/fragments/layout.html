@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html th:fragment="layout (template)">
+<head>
+  <title>Thymeleaf</title>
+</head>
+
+<body>
+<h1>Starship NCC - Delicious Taco</h1>
+<th:block th:include="${template}"/>
+</body>
+
+<footer><h3>Captain <strong>Great Space Monkey!!!</strong></footer>
+</html>

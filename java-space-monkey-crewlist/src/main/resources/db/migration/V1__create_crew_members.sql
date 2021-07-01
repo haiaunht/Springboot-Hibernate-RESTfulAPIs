@@ -1,0 +1,7 @@
+CREATE TABLE crew_members (
+id SERIAL PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+hobby VARCHAR(255) NOT NULL,
+rank VARCHAR(255) NOT NULL,
+tours_aboard INTEGER NOT NULL
+);

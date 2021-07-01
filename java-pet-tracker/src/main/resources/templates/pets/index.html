@@ -1,0 +1,17 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+
+  <body>
+    <h1>Pets Index</h1>
+
+    <ul>
+      <div class="pets" th:each="pet : ${pets}">
+        <div class="pet" th:object="${pet}">
+          <ul th:text="*{name}"></ul>
+        </div>
+      </div>
+    </ul>
+
+    <h3><a class="link" th:href="@{/pets/new}">Add a new Pet</a></h3>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+h2,h1 {
+  color: blue;
+  text-align: center;
+}
+
+h3 {
+  color: blueviolet;
+  text-align: center;
+}
+
+.link:hover {
+  color: #abcdef;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.error {
+  color: crimson;
+}
+
+div {
+  display: block;
+  margin-left: 70px;
+}

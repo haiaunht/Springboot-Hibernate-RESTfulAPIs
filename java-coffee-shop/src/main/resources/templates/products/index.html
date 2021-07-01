@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+<h2>All Products</h2>
+<ul>
+  <div th:each="product : ${products}"  th:object="${product}" th:if="${product}" th:remove="tag">
+      <li>
+        <a th:href="@{/products/show/} + *{id}">
+          <h4 th:text="*{name}" ></h4>
+        </a>
+        <p th:text="*{price}"></p>
+        <p th:class="'caffeine-rating-' + *{caffeineRating}" th:text="*{caffeineRating}"></p>
+      </li>
+  </div>
+</ul>
+<br>
+
+<h3><a class="link" th:href="@{/products/new}">Add new Products</a></h3>
+</body>
+</html>

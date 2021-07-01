@@ -1,0 +1,25 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Index page</title>
+</head>
+<body>
+<div class="viewscreens" th:each="viewscreen : ${viewscreens}">
+  <div class="viewscreen" th:object="${viewscreen}">
+    <h2 th:if="*{not #strings.isEmpty(name)}" th:text="*{name}"></h2>
+    <dl>
+      <dt><strong>Role:</strong></dt>
+      <dd th:text="*{role}"></dd>
+
+      <dt><strong>Location:</strong></dt>
+      <dd th:text="*{location}"></dd>
+
+      <dt><strong>Bananas:</strong></dt>
+      <dd th:text="*{bananas}"></dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>

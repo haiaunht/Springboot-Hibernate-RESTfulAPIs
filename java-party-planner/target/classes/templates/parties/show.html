@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Party Show Page</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div th:object="${party}">
+  <h1 th:text="*{partyName}"></h1>
+  <p th:text="'Description: ' + *{description}"></p>
+  <p th:text="'Location: ' + *{location}"></p>
+</div>
+
+<h3>Invited Friend</h3>
+<ol>
+  <div th:each="friend: ${party.getFriends()}" th:if="${friend}">
+  <li th:object="${friend}"  th:text="*{firstName} + ' ' + *{lastName}"></li>
+    <form action="#" th:action="@{/parties/remove/{friendId}(friendId=${friend.id})}" th:object="${friend}" th:method="POST">
+       <button type="submit">Remove this Invite!</button>
+    </form>
+  </div>
+</ol>
+
+<h3>Who else would you like to join the party</h3>
+<form action="#" th:action="@{/friends/update/{partyId}(partyId=${party.id})}" th:object="${incomingFriend}" th:method="POST">
+  <div>
+    <select th:field="${incomingFriend.id}">
+      <option value=""> ------  </option>
+      <div th:each="friend : ${allFriends}" th:tag="remove">
+        <option th:value="${friend.id}" th:text="${friend.firstName} + ' ' + ${friend.lastName}"></option>
+      </div>
+    </select>
+  </div>
+  </br>
+  <div>
+    <input type="submit" value="Send the Invite"/>
+  </div>
+</form>
+
+<h3><a class="link" th:href="@{/parties/update/{partyId}(partyId=${party.id})}">Edit this party</a></h3>
+<form action="#" th:action="@{/parties/delete/{partyId}(partyId=${party.id})}" th:method="delete">
+  <button type="submit">Delete this party</button>
+</form>
+<h3><a class="link" th:href="'/parties'">Home</a></h3>
+</body>
+</html>

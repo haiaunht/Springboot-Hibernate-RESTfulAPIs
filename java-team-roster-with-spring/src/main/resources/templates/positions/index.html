@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teams</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h2>Curling Teams Postions</h2>
+<div th:each="position : ${positions}" th:remove="tag">
+  <div>
+    <ul>
+      <a class="itemLink" th:href="@{/positions/} + '' + ${position}"><li th:text="${position}" ></li></a>
+    </ul>
+  </div>
+</div>
+
+<h3><a class="link" th:href="@{/}" >Home</a></h3>
+</body>
+</html>

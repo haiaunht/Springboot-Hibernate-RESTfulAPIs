@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Idea</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<h3>All ideas</h3>
+<div th:each="idea: ${ideas}" th:object="${idea}" th:if="${idea}">
+  <dl>
+    <dt th:text="*{name}"></dt>
+    <dd th:text="*{description}"></dd>
+  </dl>
+</div>
+
+<h3>Idea which does not contain the word 'stagr'</h3>
+<div th:each="st: ${stagr}" th:object="${st}" th:if="${st}">
+  <dl>
+    <dt th:text="*{name}"></dt>
+    <dd th:text="*{description}"></dd>
+  </dl>
+</div>
+
+<h3>Idea which has the name end with 'gram'</h3>
+<div th:each="t: ${gram}" th:object="${t}" th:if="${t}">
+  <dl>
+    <dt th:text="*{name}"></dt>
+    <dd th:text="*{description}"></dd>
+  </dl>
+</div>
+
+<h3>Idea which has the name start with 'Cat'</h3>
+<div th:each="cat: ${cat}" th:object="${cat}" th:if="${cat}">
+  <dl>
+    <dt th:text="*{name}"></dt>
+    <dd th:text="*{description}"></dd>
+  </dl>
+</div>
+
+<h3>Find Idea by the name 'Dogbook'</h3>
+<div th:object="${dogbook}" th:if="${dogbook}">
+  <dl>
+    <dt th:text="*{name}"></dt>
+    <dd th:text="*{description}"></dd>
+  </dl>
+</div>
+
+<h3>Find 1st idea </h3>
+<div th:object="${ideaById1}" th:if="${ideaById1}">
+  <dl>
+    <dt th:text="*{name}"></dt>
+    <dd th:text="*{description}"></dd>
+  </dl>
+</div>
+
+</body>
+</html>
+

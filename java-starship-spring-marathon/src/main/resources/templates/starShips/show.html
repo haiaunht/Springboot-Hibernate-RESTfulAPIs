@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SWA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<!--<html xmlns:th="https://www.thymeleaf.org"-->
+<!--      th:replace="~{fragments/layout :: layout (~{::body})}">-->
+<!--<body>-->
+
+<h2>Your are currently viewing:</h2>
+<div th:object="${ship}">
+  <h3 th:text="'StarShip: ' + *{name}"></h3>
+  <p><strong>Description: </strong><span class='italic' th:text="*{description}"></span></p>
+  <p>Fuel Capacity: <span th:text="${ship.fuelToString()}"></span></p>
+
+<!--  <span><strong>Fuel Capacity: </strong></span>-->
+<!--  <span th:if="*{fuelCapacity > 700}" th:text="'HIGH (' + *{fuelCapacity} + ' Teraliters)'"></span>-->
+<!--  <span th:if="*{fuelCapacity < 700 and fuelCapacity > 300}" th:text="'AVERAGE (' + *{fuelCapacity} + ' Teraliters)'"></span>-->
+<!--  <span th:if="*{fuelCapacity < 300}" th:text="'LOW (' + *{fuelCapacity} + ' Teraliters)'"></span>-->
+
+</div>
+<br>
+<h3><a class="link" th:href="@{/starships}">Back to List</a></h3>
+
+</body>
+</html>

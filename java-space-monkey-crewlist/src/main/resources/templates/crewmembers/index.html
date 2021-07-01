@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!DOCTYPE html>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+<h1>Space Monkey Crew Members of the Glorious Primate Ship Delicious Taco!</h1>
+<div th:each="crewmember: ${crewmembers}">
+  <div th:object="${crewmember}">
+    <h3 th:text="*{name}">Monkey name:</h3>
+    <p><strong>Hobby: </strong><span th:text="*{hobby}">Hobby</span></p>
+    <p><strong>Rank: </strong><span th:text="*{rank}">Rank</span></p>
+    <p><strong>Tours Aboard the Delicious Taco: </strong><span th:text="*{toursAboard}">Tours Aboard</span></p>
+  </div>
+  <br>
+</div>
+
+<h3><a class="link" th:href="'/crewmembers/new'">Sign up!</a></h3>
+</body>
+</html>

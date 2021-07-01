@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Position</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h2>Position - Players</h2>
+<h2 th:text="${position}"></h2>
+<div th:each="player : ${players}" th:remove="tag">
+  <ul th:object="${player}" >
+    <li th:text="*{name} + '. Team: ' + *{team}"></li>
+  </ul>
+</div>
+<br>
+
+<h3><a class="link" th:href="@{/positions}">Back to Postions</a></h3>
+<h3><a class="link" th:href="@{/}">Home</a></h3>
+
+</body>
+</html>

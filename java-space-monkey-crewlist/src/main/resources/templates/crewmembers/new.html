@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<form action="#" th:action="@{/crewmembers}" th:object="${crewMember}" method="POST">
+  <label th:for="name">Name:</label>
+  <input type="text" id="name" th:field="*{name}" />
+  <p class="error" th:errors="*{name}"></p>
+  <br/>
+
+  <label th:for="hobby">Hobby:</label>
+  <input type="text" id="hobby" th:field="*{hobby}" />
+  <p class="error" th:errors="*{hobby}"></p>
+  <br/>
+
+  <label th:for="rank">Rank:</label>
+  <input type="text" id="rank" th:field="*{rank}" />
+  <p class="error" th:errors="*{rank}"></p>
+  <br/>
+
+  <label th:for="toursAboard">Tours aboard:</label>
+  <input type="number" id="toursAboard" th:field="*{toursAboard}" />
+  <p class="error" th:errors="*{toursAboard}"></p>
+  <br/>
+
+  <input type="submit" value="Sign Up" />
+</form>
+
+<h3><a class="link" th:href="'/crewmembers'">Back to Party's List!</a></h3>
+</body>
+</html>

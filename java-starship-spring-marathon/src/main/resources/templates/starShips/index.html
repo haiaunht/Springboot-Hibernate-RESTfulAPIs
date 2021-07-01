@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SWA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<!--<html xmlns:th="https://www.thymeleaf.org"-->
+<!--      th:replace="~{fragments/layout :: layout (~{::body})}">-->
+<body>
+
+<h2>Welcome to Space Away Authority!</h2>
+<ul>
+  <div th:each="ship, starShipId : ${ships}" th:remove="tag">
+    <li th:object="${ship}">
+      <a th:href="@{/starships/} + *{id}">
+        <p th:text="*{name} + ', fuel: ' + *{fuelCapacity}"></p>
+      </a>
+    </li>
+  </div>
+</ul>
+<br>
+
+<h3><a class="link" th:href="@{/starships/new}">Add new StarShip</a></h3>
+</body>
+</html>

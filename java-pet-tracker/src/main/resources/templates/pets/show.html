@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet show page</title>
+</head>
+<body>
+<h2>You are viewing:</h2>
+<div th:object="${pet}">
+  <p><strong>Pet's name: </strong><span th:text="*{name}"></span></p>
+  <p><strong>Pet's species: </strong><span th:text="*{species.name}"></span></p>
+  <p><strong>Pet's breed: </strong><span th:text="*{breed}"></span></p>
+  <p><strong>Pet's age: </strong><span th:text="*{age}"></span></p>
+  <p><strong>Pet's neutered: </strong><span th:text="*{neutered}"></span></p>
+</div>
+
+<h3><a class="link" th:href="@{/pets}">Back to List</a></h3>
+</body>
+</html>

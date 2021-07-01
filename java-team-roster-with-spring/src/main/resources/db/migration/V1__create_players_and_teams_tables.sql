@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS teams;
+
+CREATE TABLE teams (
+  id SERIAL PRIMARY KEY ,
+  name VARCHAR(255)
+);
+
+DROP TABLE IF EXISTS players;
+
+CREATE TABLE players (
+  id SERIAL PRIMARY KEY ,
+  name VARCHAR(255),
+  position VARCHAR(255),
+  team_id INTEGER REFERENCES teams(id)
+);

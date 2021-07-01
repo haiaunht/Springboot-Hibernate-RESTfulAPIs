@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+<h2>Your are currently viewing:</h2>
+<div th:object="${product}">
+  <h3 th:text="'Product: ' + *{name}"></h3>
+  <p th:text="'Price: ' + *{price}"></p>
+  <p th:class="'caffeine-rating-' + *{caffeineRating}" th:text="'Caffeine rating: ' + *{caffeineRating}"></p>
+  <p th:text="'Description: ' + *{description}"></p>
+</div>
+<br>
+
+<h3><a class="dangerous" href="#" th:href="@{/products/delete/} + ${product.id}">Delete this Product</a></h3>
+<h3><a class="link" th:href="@{/products}">Back to List</a></h3>
+
+<!--<form action="#" th:action="@{'/products/show/' + *{id}}" th:method="delete">-->
+<!--  <button type="submit">Delete Product</button>-->
+<!--</form>-->
+
+</body>
+</html>

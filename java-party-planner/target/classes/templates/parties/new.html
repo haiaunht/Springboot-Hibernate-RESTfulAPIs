@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a party</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h1> Add a party</h1>
+<form action="#" th:action="@{/parties}" th:object="${party}" method="POST">
+  <label th:for="partyName">Name:</label>
+  <input type="text" id="partyName" th:field="*{partyName}" />
+  <p class="error" th:errors="*{partyName}"></p>
+  <br/>
+
+  <label th:for="description">Description:</label>
+  <input type="text" id="description" th:field="*{description}" />
+  <p class="error" th:errors="*{description}"></p>
+  <br/>
+
+  <label th:for="location">Location:</label>
+  <input type="text" id="location" th:field="*{location}" />
+  <p class="error" th:errors="*{location}"></p>
+  <br/>
+
+  <input type="submit" value="Add Party" />
+</form>
+
+<h3><a class="link" th:href="'/parties'">Back to Party's List!</a></h3>
+</body>
+</html>

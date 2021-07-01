@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+<h2>Add new Product</h2>
+<form action="#" th:action="@{/products}" th:object="${product}" method="POST">
+  <div>
+    <label th:for="name">Product's name:</label>
+    <input type="text" th:field="*{name}" />
+  </div>
+  <div>
+    <label th:for="price">Price:</label>
+    <input type="number" th:field="*{price}" step="0.1" required/>
+  </div>
+  <div>
+    <label th:for="caffeineRating">Caffeine Rating:</label>
+    <input type="number" th:field="*{caffeineRating}" required/>
+  </div>
+  <div>
+    <label th:for="description">Description:</label>
+    <input type="text" th:field="*{description}" required/>
+  </div>
+
+  <div>
+    <input type="submit" value="Add new Product" />
+  </div>
+</form>
+
+<h3><a class="link" th:href="@{/products}">Back to List</a></h3>
+
+</body>
+</html>

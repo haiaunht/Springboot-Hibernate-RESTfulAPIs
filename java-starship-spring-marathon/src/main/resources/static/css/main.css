@@ -1,0 +1,19 @@
+.blue-header {
+  color: blue;
+}
+
+.description {
+  font-style: italic;
+}
+
+h2 {
+  color: blue;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.link:hover {
+  color: #abcdef;
+}
